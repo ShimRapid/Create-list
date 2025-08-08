@@ -51,9 +51,9 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-4">
-      <div className="max-w-md mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mt-8">
-        <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6 text-center">
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50 to-pink-100 dark:from-gray-900 dark:via-pink-900 dark:to-rose-900 p-4">
+      <div className="max-w-md mx-auto bg-white/80 backdrop-blur-sm dark:bg-gray-800/90 rounded-xl shadow-xl border border-pink-100 dark:border-pink-800 p-6 mt-8">
+        <h1 className="text-2xl font-bold text-pink-800 dark:text-pink-200 mb-6 text-center">
           My To-Do List
         </h1>
         
@@ -65,11 +65,11 @@ export default function Home() {
             onChange={(e) => setInputText(e.target.value)}
             onKeyPress={handleKeyPress}
             placeholder="Add a new task..."
-            className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-gray-200"
+            className="flex-1 px-4 py-2 border border-pink-200 dark:border-pink-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400 dark:bg-gray-700 dark:text-gray-200 bg-pink-50/50"
           />
           <button
             onClick={addTodo}
-            className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+            className="px-6 py-2 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-lg hover:from-pink-600 hover:to-rose-600 focus:outline-none focus:ring-2 focus:ring-pink-400 transition-all duration-200 shadow-md hover:shadow-lg"
           >
             Add
           </button>
@@ -78,29 +78,29 @@ export default function Home() {
         {/* List of to-do items */}
         <div className="space-y-2">
           {todos.length === 0 ? (
-            <p className="text-gray-500 dark:text-gray-400 text-center py-8">
+            <p className="text-pink-400 dark:text-pink-300 text-center py-8">
               No tasks yet. Add one above!
             </p>
           ) : (
             todos.map((todo) => (
               <div
                 key={todo.id}
-                className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-lg"
+                className="flex items-center gap-3 p-3 bg-pink-50/70 dark:bg-pink-900/30 rounded-lg border border-pink-100 dark:border-pink-800 hover:bg-pink-100/70 dark:hover:bg-pink-900/50 transition-colors"
               >
                 {/* Checkbox to mark as completed */}
                 <input
                   type="checkbox"
                   checked={todo.completed}
                   onChange={() => toggleTodo(todo.id)}
-                  className="w-5 h-5 text-blue-600 rounded focus:ring-blue-500"
+                  className="w-5 h-5 text-pink-600 rounded focus:ring-pink-400"
                 />
                 
                 {/* Task text - crossed out if completed */}
                 <span
                   className={`flex-1 ${
                     todo.completed
-                      ? "text-gray-500 line-through"
-                      : "text-gray-800 dark:text-gray-200"
+                      ? "text-pink-400 line-through"
+                      : "text-pink-900 dark:text-pink-100"
                   }`}
                 >
                   {todo.text}
@@ -109,7 +109,7 @@ export default function Home() {
                 {/* Delete button */}
                 <button
                   onClick={() => removeTodo(todo.id)}
-                  className="px-3 py-1 text-red-600 hover:bg-red-100 dark:hover:bg-red-900 rounded transition-colors"
+                  className="px-3 py-1 text-rose-600 hover:bg-rose-100 dark:hover:bg-rose-900/50 rounded transition-colors hover:text-rose-700"
                 >
                   Delete
                 </button>
@@ -120,7 +120,7 @@ export default function Home() {
 
         {/* Summary of tasks */}
         {todos.length > 0 && (
-          <div className="mt-6 text-center text-sm text-gray-600 dark:text-gray-400">
+          <div className="mt-6 text-center text-sm text-pink-600 dark:text-pink-300">
             {todos.filter(todo => todo.completed).length} of {todos.length} tasks completed
           </div>
         )}
