@@ -54,7 +54,7 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50 to-pink-100 dark:from-gray-900 dark:via-pink-900 dark:to-rose-900 p-4">
       <div className="max-w-md mx-auto bg-white/80 backdrop-blur-sm dark:bg-gray-800/90 rounded-xl shadow-xl border border-pink-100 dark:border-pink-800 p-6 mt-8">
         <h1 className="text-2xl font-bold text-pink-800 dark:text-pink-200 mb-6 text-center">
-          My To-Do List
+          MY Birthday list
         </h1>
         
         {/* Input section for adding new items */}

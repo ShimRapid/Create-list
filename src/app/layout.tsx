@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "My To-Do List",
+  title: "MY Birthday list",
   description: "A simple and clean to-do list to help you stay organized",
 };
 
